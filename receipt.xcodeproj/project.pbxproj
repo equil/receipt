@@ -19,6 +19,17 @@
 		6B0BDF1B15D9844600B93E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0BDEF115D9844500B93E9F /* Foundation.framework */; };
 		6B0BDF2315D9844600B93E9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B0BDF2115D9844600B93E9F /* InfoPlist.strings */; };
 		6B0BDF2615D9844600B93E9F /* receiptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0BDF2515D9844600B93E9F /* receiptTests.m */; };
+		6B16594115DCECF3006E077E /* receipt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B16593F15DCECF2006E077E /* receipt.xcdatamodeld */; };
+		6B16597A15DD4DD5006E077E /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16597915DD4DD5006E077E /* Ingredient.m */; };
+		6B16597D15DD4DD6006E077E /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16597C15DD4DD6006E077E /* Product.m */; };
+		6B16598015DD4DD6006E077E /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16597F15DD4DD6006E077E /* Category.m */; };
+		6B16598315DD4DD6006E077E /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B16598215DD4DD6006E077E /* Receipt.m */; };
+		6B16598415DD869E006E077E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B16597515DD4537006E077E /* CoreData.framework */; };
+		6BAA20E215DAF0800013CF19 /* IGRCCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E115DAF0800013CF19 /* IGRCCategoryTableViewController.m */; };
+		6BAA20E615DB73370013CF19 /* IGRCReceiptsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E515DB73370013CF19 /* IGRCReceiptsTableViewController.m */; };
+		6BAA20E615DB73370013CF1C /* IGRCSeguePrepareStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF1B /* IGRCSeguePrepareStrategy.m */; };
+		6BAA20E615DB73370013CF25 /* IGRCFromReceiptToCategorySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF24 /* IGRCFromReceiptToCategorySegue.m */; };
+		6BAA20E615DB73370013CF2A /* IGRCDataAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B0BDEEB15D9844500B93E9F /* receipt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = receipt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0BDEEF15D9844500B93E9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6B0BDEF115D9844500B93E9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B0BDEF315D9844500B93E9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,12 +53,32 @@
 		6B0BDEFE15D9844500B93E9F /* IGRCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGRCAppDelegate.h; sourceTree = "<group>"; };
 		6B0BDEFF15D9844500B93E9F /* IGRCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGRCAppDelegate.m; sourceTree = "<group>"; };
 		6B0BDF0215D9844600B93E9F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		6B0BDF1715D9844600B93E9F /* receiptTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = receiptTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0BDF1815D9844600B93E9F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6B0BDF2015D9844600B93E9F /* receiptTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "receiptTests-Info.plist"; sourceTree = "<group>"; };
 		6B0BDF2215D9844600B93E9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6B0BDF2415D9844600B93E9F /* receiptTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = receiptTests.h; sourceTree = "<group>"; };
 		6B0BDF2515D9844600B93E9F /* receiptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = receiptTests.m; sourceTree = "<group>"; };
+		6B16594015DCECF3006E077E /* receipt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = receipt.xcdatamodel; sourceTree = "<group>"; };
+		6B16597515DD4537006E077E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6B16597815DD4DD5006E077E /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
+		6B16597915DD4DD5006E077E /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
+		6B16597B15DD4DD6006E077E /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		6B16597C15DD4DD6006E077E /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		6B16597E15DD4DD6006E077E /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		6B16597F15DD4DD6006E077E /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		6B16598115DD4DD6006E077E /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		6B16598215DD4DD6006E077E /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
+		6BAA20E015DAF0800013CF19 /* IGRCCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCCategoryTableViewController.h; sourceTree = "<group>"; };
+		6BAA20E115DAF0800013CF19 /* IGRCCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCCategoryTableViewController.m; sourceTree = "<group>"; };
+		6BAA20E415DB73370013CF19 /* IGRCReceiptsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCReceiptsTableViewController.h; sourceTree = "<group>"; };
+		6BAA20E515DB73370013CF19 /* IGRCReceiptsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCReceiptsTableViewController.m; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF1B /* IGRCSeguePrepareStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCSeguePrepareStrategy.m; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF1D /* IGRCSeguePrepareStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCSeguePrepareStrategy.h; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF23 /* IGRCSeguePreparePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCSeguePreparePrivate.h; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF24 /* IGRCFromReceiptToCategorySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCFromReceiptToCategorySegue.m; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF26 /* IGRCFromReceiptToCategorySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCFromReceiptToCategorySegue.h; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCDataAccessManager.m; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF2B /* IGRCDataAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCDataAccessManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B16598415DD869E006E077E /* CoreData.framework in Frameworks */,
 				6B0BDEF015D9844500B93E9F /* UIKit.framework in Frameworks */,
 				6B0BDEF215D9844500B93E9F /* Foundation.framework in Frameworks */,
 				6B0BDEF415D9844500B93E9F /* CoreGraphics.framework in Frameworks */,
@@ -88,8 +119,6 @@
 		6B0BDEEC15D9844500B93E9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B0BDEEB15D9844500B93E9F /* receipt.app */,
-				6B0BDF1715D9844600B93E9F /* receiptTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +126,7 @@
 		6B0BDEEE15D9844500B93E9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B16597515DD4537006E077E /* CoreData.framework */,
 				6B0BDEEF15D9844500B93E9F /* UIKit.framework */,
 				6B0BDEF115D9844500B93E9F /* Foundation.framework */,
 				6B0BDEF315D9844500B93E9F /* CoreGraphics.framework */,
@@ -112,6 +142,8 @@
 				6B0BDEFF15D9844500B93E9F /* IGRCAppDelegate.m */,
 				6B0BDF0115D9844600B93E9F /* MainStoryboard.storyboard */,
 				6B0BDEF615D9844500B93E9F /* Supporting Files */,
+				6B0BDF2E15D9844600B93EA5 /* ui */,
+				6BAA20E615DB73370013CF28 /* dataAccess */,
 			);
 			path = receipt;
 			sourceTree = "<group>";
@@ -146,6 +178,72 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6B0BDF2E15D9844600B93EA0 /* receipts */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA20E015DAF0800013CF19 /* IGRCCategoryTableViewController.h */,
+				6BAA20E115DAF0800013CF19 /* IGRCCategoryTableViewController.m */,
+				6BAA20E415DB73370013CF19 /* IGRCReceiptsTableViewController.h */,
+				6BAA20E515DB73370013CF19 /* IGRCReceiptsTableViewController.m */,
+			);
+			path = receipts;
+			sourceTree = "<group>";
+		};
+		6B0BDF2E15D9844600B93EA5 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				6B0BDF2E15D9844600B93EA0 /* receipts */,
+				6BAA20E615DB73370013CF1A /* flow */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		6BAA20E615DB73370013CF1A /* flow */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA20E615DB73370013CF23 /* IGRCSeguePreparePrivate.h */,
+				6BAA20E615DB73370013CF1D /* IGRCSeguePrepareStrategy.h */,
+				6BAA20E615DB73370013CF1B /* IGRCSeguePrepareStrategy.m */,
+				6BAA20E615DB73370013CF1E /* impl */,
+			);
+			path = flow;
+			sourceTree = "<group>";
+		};
+		6BAA20E615DB73370013CF1E /* impl */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA20E615DB73370013CF26 /* IGRCFromReceiptToCategorySegue.h */,
+				6BAA20E615DB73370013CF24 /* IGRCFromReceiptToCategorySegue.m */,
+			);
+			path = impl;
+			sourceTree = "<group>";
+		};
+		6BAA20E615DB73370013CF27 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6B16597815DD4DD5006E077E /* Ingredient.h */,
+				6B16597E15DD4DD6006E077E /* Category.h */,
+				6B16597F15DD4DD6006E077E /* Category.m */,
+				6B16598115DD4DD6006E077E /* Receipt.h */,
+				6B16598215DD4DD6006E077E /* Receipt.m */,
+				6B16597B15DD4DD6006E077E /* Product.h */,
+				6B16597C15DD4DD6006E077E /* Product.m */,
+				6B16597915DD4DD5006E077E /* Ingredient.m */,
+				6B16593F15DCECF2006E077E /* receipt.xcdatamodeld */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6BAA20E615DB73370013CF28 /* dataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA20E615DB73370013CF2B /* IGRCDataAccessManager.h */,
+				6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */,
+				6BAA20E615DB73370013CF27 /* model */,
+			);
+			path = dataAccess;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,7 +261,6 @@
 			);
 			name = receipt;
 			productName = receipt;
-			productReference = 6B0BDEEB15D9844500B93E9F /* receipt.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6B0BDF1615D9844600B93E9F /* receiptTests */ = {
@@ -182,7 +279,6 @@
 			);
 			name = receiptTests;
 			productName = receiptTests;
-			productReference = 6B0BDF1715D9844600B93E9F /* receiptTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -254,6 +350,16 @@
 			files = (
 				6B0BDEFC15D9844500B93E9F /* main.m in Sources */,
 				6B0BDF0015D9844500B93E9F /* IGRCAppDelegate.m in Sources */,
+				6BAA20E215DAF0800013CF19 /* IGRCCategoryTableViewController.m in Sources */,
+				6BAA20E615DB73370013CF19 /* IGRCReceiptsTableViewController.m in Sources */,
+				6BAA20E615DB73370013CF1C /* IGRCSeguePrepareStrategy.m in Sources */,
+				6BAA20E615DB73370013CF25 /* IGRCFromReceiptToCategorySegue.m in Sources */,
+				6B16594115DCECF3006E077E /* receipt.xcdatamodeld in Sources */,
+				6BAA20E615DB73370013CF2A /* IGRCDataAccessManager.m in Sources */,
+				6B16597A15DD4DD5006E077E /* Ingredient.m in Sources */,
+				6B16597D15DD4DD6006E077E /* Product.m in Sources */,
+				6B16598015DD4DD6006E077E /* Category.m in Sources */,
+				6B16598315DD4DD6006E077E /* Receipt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +527,7 @@
 				6B0BDF2B15D9844600B93E9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B0BDF2C15D9844600B93E9F /* Build configuration list for PBXNativeTarget "receiptTests" */ = {
 			isa = XCConfigurationList;
@@ -429,8 +536,22 @@
 				6B0BDF2E15D9844600B93E9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B16593F15DCECF2006E077E /* receipt.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B16594015DCECF3006E077E /* receipt.xcdatamodel */,
+			);
+			currentVersion = 6B16594015DCECF3006E077E /* receipt.xcdatamodel */;
+			path = receipt.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6B0BDEE215D9844500B93E9F /* Project object */;
 }

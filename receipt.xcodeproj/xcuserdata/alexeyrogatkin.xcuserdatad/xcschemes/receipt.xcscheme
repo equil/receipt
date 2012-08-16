@@ -32,7 +32,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B0BDF1615D9844600B93E9F"
-               BuildableName = "receiptTests.octest"
+               BuildableName = "receiptTests"
                BlueprintName = "receiptTests"
                ReferencedContainer = "container:receipt.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B0BDEEA15D9844500B93E9F"
-            BuildableName = "receipt.app"
+            BuildableName = "receipt"
             BlueprintName = "receipt"
             ReferencedContainer = "container:receipt.xcodeproj">
          </BuildableReference>
@@ -54,6 +54,7 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
@@ -78,7 +79,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B0BDEEA15D9844500B93E9F"
-            BuildableName = "receipt.app"
+            BuildableName = "receipt"
             BlueprintName = "receipt"
             ReferencedContainer = "container:receipt.xcodeproj">
          </BuildableReference>

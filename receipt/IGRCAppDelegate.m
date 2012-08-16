@@ -7,20 +7,27 @@
 //
 
 #import "IGRCAppDelegate.h"
+#import "IGRCSeguePrepareStrategy.h"
+#import "IGRCDataAccessManager.h"
 
 @implementation IGRCAppDelegate
 
 @synthesize window = _window;
+@synthesize segueStrategy = _segueStrategy;
+@synthesize dataAccessManager = _dataAccessManager;
 
 - (void)dealloc
 {
     [_window release];
+    [_segueStrategy release];
+    [_dataAccessManager release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    _segueStrategy = [[IGRCSeguePrepareStrategy alloc] init];
+    _dataAccessManager = [[IGRCDataAccessManager alloc] init];
     return YES;
 }
 							

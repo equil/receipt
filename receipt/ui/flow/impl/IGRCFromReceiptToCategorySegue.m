@@ -7,6 +7,7 @@
 #import "IGRCFromReceiptToCategorySegue.h"
 #import "IGRCReceiptsTableViewController.h"
 #import "IGRCCategoryTableViewController.h"
+#import "Category.h"
 
 @interface IGRCFromReceiptToCategorySegue () {
 
@@ -17,9 +18,10 @@
 
 - (void)prepareViewController:(IGRCReceiptsTableViewController *)destinationController
             forTransitionFrom:(IGRCCategoryTableViewController *)sourceController
-                    parameter:(UITableViewCell *)initiator {
-    NSIndexPath *const path = [sourceController.tableView indexPathForCell:initiator];
-    destinationController.pathToSelectedCategory = path;
+                    parameter:(UITableViewCell *)sender {
+    NSIndexPath *path = [sourceController.tableView indexPathForCell:sender];
+    destinationController.fromCategory = [sourceController.fetchResultsController objectAtIndexPath:path];
+    destinationController.showOnlyFavorites = NO;
 }
 
 @end

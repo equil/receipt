@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IGRCCategoryTableViewController : UITableViewController
+@class NSFetchedResultsController;
 
+@interface IGRCCategoryTableViewController : UITableViewController
+@property(nonatomic, readonly) NSFetchedResultsController *fetchResultsController;
 @end

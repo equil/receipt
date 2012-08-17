@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Category;
+
 @interface IGRCReceiptsTableViewController : UITableViewController
 
-@property(nonatomic, retain) NSIndexPath *pathToSelectedCategory;
-
+@property(nonatomic, assign) BOOL showOnlyFavorites;
+@property(nonatomic, retain) Category *fromCategory;
 
 @end

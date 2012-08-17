@@ -17,9 +17,7 @@
 @property(nonatomic, retain) NSFetchedResultsController *fetchResultsController;
 @end
 
-@implementation IGRCCategoryTableViewController {
-    NSFetchedResultsController *_fetchResultsController;
-}
+@implementation IGRCCategoryTableViewController
 
 @synthesize fetchResultsController = _fetchResultsController;
 

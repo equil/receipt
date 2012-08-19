@@ -40,6 +40,7 @@
 		6BEF2C3015E10344005CE027 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C2E15E10344005CE027 /* second.png */; };
 		6BEF2C3115E10344005CE027 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C2F15E10344005CE027 /* second@2x.png */; };
 		6BEF2C3115E10344005CE029 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C3115E10344005CE028 /* db.sqlite */; };
+		6BEF2C3115E10344005CE02F /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C3115E10344005CE02E /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		6BEF2C2E15E10344005CE027 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		6BEF2C2F15E10344005CE027 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		6BEF2C3115E10344005CE028 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file.sqlite; path = db.sqlite; sourceTree = "<group>"; };
+		6BEF2C3115E10344005CE02E /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 		6BEF2C2615E101E3005CE028 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				6BEF2C3115E10344005CE02E /* test.png */,
 				6BEF2C3115E10344005CE028 /* db.sqlite */,
 				6BEF2C2E15E10344005CE027 /* second.png */,
 				6BEF2C2F15E10344005CE027 /* second@2x.png */,
@@ -367,6 +370,7 @@
 				6BEF2C3015E10344005CE027 /* second.png in Resources */,
 				6BEF2C3115E10344005CE027 /* second@2x.png in Resources */,
 				6BEF2C3115E10344005CE029 /* db.sqlite in Resources */,
+				6BEF2C3115E10344005CE02F /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class IGRCSeguePrepareStrategy;
-@class IGRCDataAccessManager;
+#import "IGRCSeguePrepareStrategy.h"
+#import "IGRCDataAccessManager.h"
 
 @interface IGRCAppDelegate : UIResponder <UIApplicationDelegate>
 

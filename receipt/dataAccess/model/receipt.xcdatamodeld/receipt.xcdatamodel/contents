@@ -7,6 +7,7 @@
     <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="product" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" syncable="YES"/>
+        <relationship name="receipt" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Receipt" inverseName="ingredients" inverseEntity="Receipt" syncable="YES"/>
     </entity>
     <entity name="Product" representedClassName="Product" syncable="YES">
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
@@ -19,7 +20,7 @@
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="yield" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="category" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Category" syncable="YES"/>
-        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Ingredient" syncable="YES"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Ingredient" inverseName="receipt" inverseEntity="Ingredient" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="title"/>
@@ -28,8 +29,8 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Ingredient" positionX="-45" positionY="72" width="128" height="73"/>
+        <element name="Ingredient" positionX="-45" positionY="72" width="128" height="90"/>
         <element name="Product" positionX="-182" positionY="189" width="128" height="58"/>
-        <element name="Receipt" positionX="-308" positionY="-46" width="128" height="163"/>
+        <element name="Receipt" positionX="-308" positionY="-46" width="128" height="165"/>
     </elements>
 </model>

@@ -50,7 +50,7 @@
         return _persistentStoreCoordinator;
     }
 
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"testtest.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"db.sqlite"];
 
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -84,6 +84,15 @@
 
     return _persistentStoreCoordinator;
 }
+
+- (void)saveState {
+    NSError *error = nil;
+    const BOOL success = [self.managedObjectContext save:&error];
+    if (!success) {
+        NSLog(@"Error while save context. %@", [error userInfo]);
+    }
+}
+
 
 - (NSURL *)applicationDocumentsDirectory
 {

@@ -10,8 +10,8 @@
 #import "IGRCReceiptsTableViewController.h"
 #import "Category.h"
 #import "IGRCAppDelegate.h"
-#import "IGRCDataAccessManager.h"
 #import "Receipt.h"
+#import "IGRCReceiptCell.h"
 
 @interface IGRCReceiptsTableViewController ()
 @property(nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -21,6 +21,7 @@
 @private
     BOOL _showOnlyFavorite;
     Category *_fromCategory;
+    NSFetchedResultsController *_fetchedResultsController;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -31,7 +32,18 @@
     return self;
 }
 
-@synthesize fetchedResultsController = _fetchedResultsController;
+- (NSPredicate *)predicateForFetchedController {
+    return [NSPredicate predicateWithFormat:@"category == %@", self.fromCategory];
+}
+
+- (void)fetchData {
+    NSError *error = nil;
+    self.fetchedResultsController = nil;
+    BOOL success = [self.fetchedResultsController performFetch:&error];
+    if (!success) {
+        NSLog(@"Error in fetching: %@", error.userInfo);
+    }
+}
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if (_fetchedResultsController == nil) {
@@ -42,16 +54,7 @@
         [fetch setEntity:[NSEntityDescription entityForName:@"Receipt"
                                      inManagedObjectContext:context]];
 
-        NSMutableArray *predicates = [NSMutableArray arrayWithCapacity:2];
-        if (self.showOnlyFavorites) {
-            [predicates addObject:[NSPredicate predicateWithFormat:@"favorite == YES"]];
-        }
-        if (self.fromCategory != nil) {
-            [predicates addObject:[NSPredicate predicateWithFormat:@"category == %@", self.fromCategory]];
-        }
-        NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
-
-        [fetch setPredicate:predicate];
+        [fetch setPredicate:[self predicateForFetchedController]];
 
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
         [fetch setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
@@ -61,20 +64,62 @@
                 initWithFetchRequest:fetch
                 managedObjectContext:context
                   sectionNameKeyPath:nil cacheName:nil];
+        _fetchedResultsController.delegate = self;
         [fetch release];
     }
+
     return _fetchedResultsController;
 
 }
 
-- (BOOL)showOnlyFavorites {
-    return _showOnlyFavorite;
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView beginUpdates];
 }
 
-- (void)setShowOnlyFavorites:(BOOL)aShowOnlyFavorites {
-    self.fetchedResultsController = nil;
-    _showOnlyFavorite = aShowOnlyFavorites;
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+	switch (type) {
+		case NSFetchedResultsChangeInsert:
+			[self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+
+		case NSFetchedResultsChangeDelete:
+			[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
 }
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath {
+	UITableView *tableView = self.tableView;
+
+	switch (type) {
+		case NSFetchedResultsChangeInsert:
+			[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+
+		case NSFetchedResultsChangeDelete:
+			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+
+		case NSFetchedResultsChangeUpdate:
+
+            break;
+
+		case NSFetchedResultsChangeMove:
+			[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+			[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	[self.tableView endUpdates];
+}
+
+
 
 - (Category *)fromCategory {
     return _fromCategory;
@@ -84,34 +129,33 @@
     self.fetchedResultsController = nil;
     [_fromCategory release];
     _fromCategory = [aFromCategory retain];
-    return; _fromCategory;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSError *error = nil;
-    BOOL success = [self.fetchedResultsController performFetch:&error];
-    if (!success) {
-        NSLog(@"Error in fetching: %@", error.userInfo);
-    }
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    self.fetchedResultsController = nil;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self fetchData];
+    [super viewWillAppear:animated];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    IGRCAppDelegate *delegate = (IGRCAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [delegate.segueStrategy prepareForSegue:segue parameter:sender];
+}
+
 
 #pragma mark - Table view data source
 
@@ -126,53 +170,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"ReceiptCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    IGRCReceiptCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     Receipt *receipt = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = receipt.title;
-    cell.detailTextLabel.text = receipt.descript;
+    [cell configureWithReceipt:receipt];
 
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -188,8 +192,9 @@
 }
 
 - (void)dealloc {
-    [_fetchedResultsController release];
+    self.fetchedResultsController = nil;
     [_fromCategory release];
+    [_fetchedResultsController release];
     [super dealloc];
 }
 

@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @class Category;
+@class NSFetchedResultsController;
 
-@interface IGRCReceiptsTableViewController : UITableViewController
+@interface IGRCReceiptsTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
-@property(nonatomic, assign) BOOL showOnlyFavorites;
 @property(nonatomic, retain) Category *fromCategory;
+
+@property(nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+
+- (NSPredicate *)predicateForFetchedController;
+
 
 @end

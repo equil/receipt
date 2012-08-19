@@ -8,5 +8,5 @@
 #import "IGRCSeguePreparePrivate.h"
 
 
-@interface IGRCFromReceiptToCategorySegue : NSObject<IGRCSeguePreparePrivate>
+@interface IGRCFromCategoryToReceiptSegue : NSObject<IGRCSeguePreparePrivate>
 @end

@@ -28,8 +28,18 @@
 		6BAA20E215DAF0800013CF19 /* IGRCCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E115DAF0800013CF19 /* IGRCCategoryTableViewController.m */; };
 		6BAA20E615DB73370013CF19 /* IGRCReceiptsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E515DB73370013CF19 /* IGRCReceiptsTableViewController.m */; };
 		6BAA20E615DB73370013CF1C /* IGRCSeguePrepareStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF1B /* IGRCSeguePrepareStrategy.m */; };
-		6BAA20E615DB73370013CF25 /* IGRCFromReceiptToCategorySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF24 /* IGRCFromReceiptToCategorySegue.m */; };
+		6BAA20E615DB73370013CF25 /* IGRCFromCategoryToReceiptSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF24 /* IGRCFromCategoryToReceiptSegue.m */; };
 		6BAA20E615DB73370013CF2A /* IGRCDataAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */; };
+		6BEF2BB915E029F1005CE027 /* IGRCCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF2BB815E029F1005CE027 /* IGRCCategoryCell.m */; };
+		6BEF2BB915E029F1005CE02A /* IGRCReceiptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF2BB915E029F1005CE029 /* IGRCReceiptCell.m */; };
+		6BEF2BB915E029F1005CE030 /* IGRCReceiptDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF2BB915E029F1005CE02F /* IGRCReceiptDetailsViewController.m */; };
+		6BEF2BB915E029F1005CE032 /* IGRCReceiptDetailsSeguePreparer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF2BB915E029F1005CE031 /* IGRCReceiptDetailsSeguePreparer.m */; };
+		6BEF2BB915E029F1005CE035 /* IGRCFavoriteReceiptsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEF2BB915E029F1005CE034 /* IGRCFavoriteReceiptsTableViewController.m */; };
+		6BEF2C2515E101E3005CE027 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C2315E101E3005CE027 /* first.png */; };
+		6BEF2C2615E101E3005CE027 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C2415E101E3005CE027 /* first@2x.png */; };
+		6BEF2C3015E10344005CE027 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C2E15E10344005CE027 /* second.png */; };
+		6BEF2C3115E10344005CE027 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C2F15E10344005CE027 /* second@2x.png */; };
+		6BEF2C3115E10344005CE029 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6BEF2C3115E10344005CE028 /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,10 +85,25 @@
 		6BAA20E615DB73370013CF1B /* IGRCSeguePrepareStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCSeguePrepareStrategy.m; sourceTree = "<group>"; };
 		6BAA20E615DB73370013CF1D /* IGRCSeguePrepareStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCSeguePrepareStrategy.h; sourceTree = "<group>"; };
 		6BAA20E615DB73370013CF23 /* IGRCSeguePreparePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCSeguePreparePrivate.h; sourceTree = "<group>"; };
-		6BAA20E615DB73370013CF24 /* IGRCFromReceiptToCategorySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCFromReceiptToCategorySegue.m; sourceTree = "<group>"; };
-		6BAA20E615DB73370013CF26 /* IGRCFromReceiptToCategorySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCFromReceiptToCategorySegue.h; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF24 /* IGRCFromCategoryToReceiptSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCFromCategoryToReceiptSegue.m; sourceTree = "<group>"; };
+		6BAA20E615DB73370013CF26 /* IGRCFromCategoryToReceiptSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCFromCategoryToReceiptSegue.h; sourceTree = "<group>"; };
 		6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCDataAccessManager.m; sourceTree = "<group>"; };
 		6BAA20E615DB73370013CF2B /* IGRCDataAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCDataAccessManager.h; sourceTree = "<group>"; };
+		6BEF2BB715E029F1005CE027 /* IGRCCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCCategoryCell.h; sourceTree = "<group>"; };
+		6BEF2BB815E029F1005CE027 /* IGRCCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCCategoryCell.m; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE028 /* IGRCReceiptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCReceiptCell.h; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE029 /* IGRCReceiptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCReceiptCell.m; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE02E /* IGRCReceiptDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCReceiptDetailsViewController.h; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE02F /* IGRCReceiptDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCReceiptDetailsViewController.m; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE031 /* IGRCReceiptDetailsSeguePreparer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCReceiptDetailsSeguePreparer.m; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE033 /* IGRCReceiptDetailsSeguePreparer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCReceiptDetailsSeguePreparer.h; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE034 /* IGRCFavoriteReceiptsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCFavoriteReceiptsTableViewController.m; sourceTree = "<group>"; };
+		6BEF2BB915E029F1005CE036 /* IGRCFavoriteReceiptsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCFavoriteReceiptsTableViewController.h; sourceTree = "<group>"; };
+		6BEF2C2315E101E3005CE027 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		6BEF2C2415E101E3005CE027 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		6BEF2C2E15E10344005CE027 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		6BEF2C2F15E10344005CE027 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		6BEF2C3115E10344005CE028 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file.sqlite; path = db.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +169,7 @@
 				6B0BDEF615D9844500B93E9F /* Supporting Files */,
 				6B0BDF2E15D9844600B93EA5 /* ui */,
 				6BAA20E615DB73370013CF28 /* dataAccess */,
+				6BEF2C2615E101E3005CE028 /* resources */,
 			);
 			path = receipt;
 			sourceTree = "<group>";
@@ -181,10 +207,18 @@
 		6B0BDF2E15D9844600B93EA0 /* receipts */ = {
 			isa = PBXGroup;
 			children = (
+				6BEF2BB915E029F1005CE036 /* IGRCFavoriteReceiptsTableViewController.h */,
+				6BEF2BB915E029F1005CE034 /* IGRCFavoriteReceiptsTableViewController.m */,
+				6BEF2BB915E029F1005CE02F /* IGRCReceiptDetailsViewController.m */,
+				6BEF2BB915E029F1005CE02E /* IGRCReceiptDetailsViewController.h */,
+				6BEF2BB915E029F1005CE029 /* IGRCReceiptCell.m */,
+				6BEF2BB915E029F1005CE028 /* IGRCReceiptCell.h */,
 				6BAA20E015DAF0800013CF19 /* IGRCCategoryTableViewController.h */,
 				6BAA20E115DAF0800013CF19 /* IGRCCategoryTableViewController.m */,
 				6BAA20E415DB73370013CF19 /* IGRCReceiptsTableViewController.h */,
 				6BAA20E515DB73370013CF19 /* IGRCReceiptsTableViewController.m */,
+				6BEF2BB715E029F1005CE027 /* IGRCCategoryCell.h */,
+				6BEF2BB815E029F1005CE027 /* IGRCCategoryCell.m */,
 			);
 			path = receipts;
 			sourceTree = "<group>";
@@ -212,8 +246,10 @@
 		6BAA20E615DB73370013CF1E /* impl */ = {
 			isa = PBXGroup;
 			children = (
-				6BAA20E615DB73370013CF26 /* IGRCFromReceiptToCategorySegue.h */,
-				6BAA20E615DB73370013CF24 /* IGRCFromReceiptToCategorySegue.m */,
+				6BEF2BB915E029F1005CE033 /* IGRCReceiptDetailsSeguePreparer.h */,
+				6BEF2BB915E029F1005CE031 /* IGRCReceiptDetailsSeguePreparer.m */,
+				6BAA20E615DB73370013CF26 /* IGRCFromCategoryToReceiptSegue.h */,
+				6BAA20E615DB73370013CF24 /* IGRCFromCategoryToReceiptSegue.m */,
 			);
 			path = impl;
 			sourceTree = "<group>";
@@ -242,6 +278,18 @@
 				6BAA20E615DB73370013CF27 /* model */,
 			);
 			path = dataAccess;
+			sourceTree = "<group>";
+		};
+		6BEF2C2615E101E3005CE028 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BEF2C3115E10344005CE028 /* db.sqlite */,
+				6BEF2C2E15E10344005CE027 /* second.png */,
+				6BEF2C2F15E10344005CE027 /* second@2x.png */,
+				6BEF2C2415E101E3005CE027 /* first@2x.png */,
+				6BEF2C2315E101E3005CE027 /* first.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +362,11 @@
 			files = (
 				6B0BDEFA15D9844500B93E9F /* InfoPlist.strings in Resources */,
 				6B0BDF0315D9844600B93E9F /* MainStoryboard.storyboard in Resources */,
+				6BEF2C2515E101E3005CE027 /* first.png in Resources */,
+				6BEF2C2615E101E3005CE027 /* first@2x.png in Resources */,
+				6BEF2C3015E10344005CE027 /* second.png in Resources */,
+				6BEF2C3115E10344005CE027 /* second@2x.png in Resources */,
+				6BEF2C3115E10344005CE029 /* db.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,13 +406,18 @@
 				6BAA20E215DAF0800013CF19 /* IGRCCategoryTableViewController.m in Sources */,
 				6BAA20E615DB73370013CF19 /* IGRCReceiptsTableViewController.m in Sources */,
 				6BAA20E615DB73370013CF1C /* IGRCSeguePrepareStrategy.m in Sources */,
-				6BAA20E615DB73370013CF25 /* IGRCFromReceiptToCategorySegue.m in Sources */,
+				6BAA20E615DB73370013CF25 /* IGRCFromCategoryToReceiptSegue.m in Sources */,
 				6B16594115DCECF3006E077E /* receipt.xcdatamodeld in Sources */,
 				6BAA20E615DB73370013CF2A /* IGRCDataAccessManager.m in Sources */,
 				6B16597A15DD4DD5006E077E /* Ingredient.m in Sources */,
 				6B16597D15DD4DD6006E077E /* Product.m in Sources */,
 				6B16598015DD4DD6006E077E /* Category.m in Sources */,
 				6B16598315DD4DD6006E077E /* Receipt.m in Sources */,
+				6BEF2BB915E029F1005CE027 /* IGRCCategoryCell.m in Sources */,
+				6BEF2BB915E029F1005CE02A /* IGRCReceiptCell.m in Sources */,
+				6BEF2BB915E029F1005CE030 /* IGRCReceiptDetailsViewController.m in Sources */,
+				6BEF2BB915E029F1005CE032 /* IGRCReceiptDetailsSeguePreparer.m in Sources */,
+				6BEF2BB915E029F1005CE035 /* IGRCFavoriteReceiptsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

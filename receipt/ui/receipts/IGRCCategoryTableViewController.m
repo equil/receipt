@@ -12,14 +12,15 @@
 #import "IGRCSeguePrepareStrategy.h"
 #import "IGRCDataAccessManager.h"
 #import "Category.h"
+#import "IGRCCategoryCell.h"
 
 @interface IGRCCategoryTableViewController ()
 @property(nonatomic, retain) NSFetchedResultsController *fetchResultsController;
 @end
 
-@implementation IGRCCategoryTableViewController
-
-@synthesize fetchResultsController = _fetchResultsController;
+@implementation IGRCCategoryTableViewController {
+    NSFetchedResultsController *_fetchResultsController;
+}
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -75,10 +76,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CategoryCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    IGRCCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     Category *category = [self.fetchResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = category.title;
+
+    [cell configureForCategory:category];
 
     return cell;
 }

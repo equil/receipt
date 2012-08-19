@@ -6,7 +6,8 @@
 
 #import "IGRCSeguePrepareStrategy.h"
 #import "IGRCSeguePreparePrivate.h"
-#import "IGRCFromReceiptToCategorySegue.h"
+#import "IGRCFromCategoryToReceiptSegue.h"
+#import "IGRCReceiptDetailsSeguePreparer.h"
 
 @interface IGRCSeguePrepareStrategy () {
 
@@ -22,7 +23,8 @@
     self = [super init];
     if (self != nil) {
         NSMutableDictionary *strategies = [[NSMutableDictionary alloc] initWithCapacity:1];
-        [strategies setObject:[[[IGRCFromReceiptToCategorySegue alloc] init] autorelease] forKey:@"CategoryToReceiptSegue"];
+        [strategies setObject:[[[IGRCFromCategoryToReceiptSegue alloc] init] autorelease] forKey:@"CategoryToReceiptSegue"];
+        [strategies setObject:[[[IGRCReceiptDetailsSeguePreparer alloc] init] autorelease] forKey:@"ReceiptDetailsSegue"];
         _strategies = strategies;
     }
     return self;

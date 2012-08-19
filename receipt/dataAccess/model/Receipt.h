@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * descript;
 @property (nonatomic, retain) NSNumber * favorite;
 @property (nonatomic, retain) NSString * howToPrepare;
-@property (nonatomic, retain) id image;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSDecimalNumber * yield;
 @property (nonatomic, retain) Category *category;

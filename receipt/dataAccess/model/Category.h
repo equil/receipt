@@ -12,7 +12,7 @@
 
 @interface Category : NSManagedObject
 
-@property (nonatomic, retain) id image;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSString * title;
 
 @end

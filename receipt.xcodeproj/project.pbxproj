@@ -517,10 +517,14 @@
 		6B0BDF2A15D9844600B93E9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: OOO InTech";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: OOO InTech";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "receipt/receipt-Prefix.pch";
 				INFOPLIST_FILE = "receipt/receipt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "02E9C0D7-F350-4D9E-A345-2858214BFDFB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "570E28AA-0C7B-4B70-8E81-084E15ABC5CA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,10 +532,14 @@
 		6B0BDF2B15D9844600B93E9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: OOO InTech";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: OOO InTech";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "receipt/receipt-Prefix.pch";
 				INFOPLIST_FILE = "receipt/receipt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "02E9C0D7-F350-4D9E-A345-2858214BFDFB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "570E28AA-0C7B-4B70-8E81-084E15ABC5CA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -38,7 +38,7 @@ Thumbs.db
 # project related #
 ###################
 .idea
-bancloud.xcodeproj/project.xcworkspace
-bancloud.xcodeproj/xcuserdata
+receipt.xcodeproj/project.xcworkspace
+receipt.xcodeproj/xcuserdata
 
 build

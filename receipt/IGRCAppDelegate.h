@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "IGRCSeguePrepareStrategy.h"
 #import "IGRCDataAccessManager.h"
+#import "IGRCFavoritesBadgeObserver.h"
 
 @interface IGRCAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic, readonly) IGRCSeguePrepareStrategy *segueStrategy;
-@property (strong, nonatomic, readonly) IGRCDataAccessManager *dataAccessManager;
+@property (retain, nonatomic, readonly) IGRCSeguePrepareStrategy *segueStrategy;
+@property (retain, nonatomic, readonly) IGRCDataAccessManager *dataAccessManager;
 
 @end

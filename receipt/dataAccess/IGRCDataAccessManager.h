@@ -6,15 +6,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "IGRCFavoritesBadgeObserver.h"
 
 @interface IGRCDataAccessManager : NSObject
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(readonly, retain, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property(readonly, retain, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property(readonly, retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(nonatomic, retain, readonly) IGRCFavoritesBadgeObserver *favoriteBadgeObserver;
 
-
-- (void) saveState;
+- (void)saveState;
 
 
 @end

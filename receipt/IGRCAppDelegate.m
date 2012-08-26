@@ -7,8 +7,6 @@
 //
 
 #import "IGRCAppDelegate.h"
-#import "Receipt.h"
-#import "Category.h"
 
 static NSString *const METADATA_FILE_NAME = @"db.sqlite";
 
@@ -17,6 +15,7 @@ static NSString *const METADATA_FILE_NAME = @"db.sqlite";
 @synthesize window = _window;
 @synthesize segueStrategy = _segueStrategy;
 @synthesize dataAccessManager = _dataAccessManager;
+
 
 - (void)dealloc {
     [_window release];

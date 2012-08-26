@@ -18,7 +18,19 @@
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
 }
 
+@synthesize favoriteBadgeObserver = _favoriteBadgeObserver;
+
+
 #pragma mark - Low-level instruments
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        _favoriteBadgeObserver = [[IGRCFavoritesBadgeObserver alloc] initWithContext:self.managedObjectContext];
+    }
+    return self;
+}
+
 
 - (NSManagedObjectContext *)managedObjectContext
 {
@@ -104,6 +116,7 @@
     [_managedObjectContext release];
     [_managedObjectModel release];
     [_persistentStoreCoordinator release];
+    [_favoriteBadgeObserver release];
     [super dealloc];
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65565BB5EC7DD7FF35C03DDC /* IGRCFavoritesBadgeObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 655659C8406D71254FD66D09 /* IGRCFavoritesBadgeObserver.m */; };
 		6B0BDEF015D9844500B93E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0BDEEF15D9844500B93E9F /* UIKit.framework */; };
 		6B0BDEF215D9844500B93E9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0BDEF115D9844500B93E9F /* Foundation.framework */; };
 		6B0BDEF415D9844500B93E9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0BDEF315D9844500B93E9F /* CoreGraphics.framework */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6556593FE868A3C17FF6E6F9 /* IGRCFavoritesBadgeObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRCFavoritesBadgeObserver.h; sourceTree = "<group>"; };
+		655659C8406D71254FD66D09 /* IGRCFavoritesBadgeObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRCFavoritesBadgeObserver.m; sourceTree = "<group>"; };
 		6B0BDEEF15D9844500B93E9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6B0BDEF115D9844500B93E9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B0BDEF315D9844500B93E9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -275,6 +278,8 @@
 		6BAA20E615DB73370013CF28 /* dataAccess */ = {
 			isa = PBXGroup;
 			children = (
+				655659C8406D71254FD66D09 /* IGRCFavoritesBadgeObserver.m */,
+				6556593FE868A3C17FF6E6F9 /* IGRCFavoritesBadgeObserver.h */,
 				6BAA20E615DB73370013CF2B /* IGRCDataAccessManager.h */,
 				6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */,
 				6BAA20E615DB73370013CF27 /* model */,
@@ -422,6 +427,7 @@
 				6BEF2BB915E029F1005CE030 /* IGRCReceiptDetailsViewController.m in Sources */,
 				6BEF2BB915E029F1005CE032 /* IGRCReceiptDetailsSeguePreparer.m in Sources */,
 				6BEF2BB915E029F1005CE035 /* IGRCFavoriteReceiptsTableViewController.m in Sources */,
+				65565BB5EC7DD7FF35C03DDC /* IGRCFavoritesBadgeObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,14 +523,14 @@
 		6B0BDF2A15D9844600B93E9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OOO InTech";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: OOO InTech";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexey Rogatkin (CLRCPF3376)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexey Rogatkin (CLRCPF3376)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "receipt/receipt-Prefix.pch";
 				INFOPLIST_FILE = "receipt/receipt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02E9C0D7-F350-4D9E-A345-2858214BFDFB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "570E28AA-0C7B-4B70-8E81-084E15ABC5CA";
+				PROVISIONING_PROFILE = "C3C3E08B-B90D-4C59-B1A1-3AA3D2D758B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3C3E08B-B90D-4C59-B1A1-3AA3D2D758B3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,14 +538,14 @@
 		6B0BDF2B15D9844600B93E9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OOO InTech";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: OOO InTech";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexey Rogatkin (CLRCPF3376)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexey Rogatkin (CLRCPF3376)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "receipt/receipt-Prefix.pch";
 				INFOPLIST_FILE = "receipt/receipt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02E9C0D7-F350-4D9E-A345-2858214BFDFB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "570E28AA-0C7B-4B70-8E81-084E15ABC5CA";
+				PROVISIONING_PROFILE = "C3C3E08B-B90D-4C59-B1A1-3AA3D2D758B3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3C3E08B-B90D-4C59-B1A1-3AA3D2D758B3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

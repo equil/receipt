@@ -13,6 +13,17 @@
 
 @implementation IGRCFavoriteReceiptsTableViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.selectedItem.badgeValue = @"";
+}
+
+
 - (NSPredicate *)predicateForFetchedController {
     return [NSPredicate predicateWithFormat:@"favorite == YES"];
 }

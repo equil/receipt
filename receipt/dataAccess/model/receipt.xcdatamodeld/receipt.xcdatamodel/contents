@@ -4,6 +4,10 @@
         <attribute name="image" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
+    <entity name="Good" representedClassName="Good" syncable="YES">
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" syncable="YES"/>
+    </entity>
     <entity name="Ingredient" representedClassName="Ingredient" syncable="YES">
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="product" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" syncable="YES"/>
@@ -28,9 +32,10 @@
         </compoundIndexes>
     </entity>
     <elements>
-        <element name="Category" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Ingredient" positionX="-227" positionY="117" width="128" height="90"/>
-        <element name="Product" positionX="-47" positionY="140" width="128" height="58"/>
-        <element name="Receipt" positionX="-450" positionY="-46" width="128" height="165"/>
+        <element name="Category" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Ingredient" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Product" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Receipt" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Good" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

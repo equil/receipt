@@ -13,6 +13,8 @@
 @interface IGRCFavoritesBadgeObserver : NSObject
 
 @property(readonly) NSManagedObjectContext *context;
+@property(readonly) NSMutableArray *arrayOfFavoritesDone;
+@property(readonly) NSMutableArray *arrayOfFavoritesTemp;
 
 - (id)initWithContext:(NSManagedObjectContext *)context;
 

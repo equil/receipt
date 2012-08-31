@@ -42,9 +42,54 @@
     _receipt.favorite = [NSNumber numberWithBool:![_receipt.favorite boolValue]];
     IGRCAppDelegate *delegate = (IGRCAppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.dataAccessManager saveState];
+    
+    if (![delegate.dataAccessManager.favoriteBadgeObserver.arrayOfFavoritesDone containsObject:_receipt.title])
+    {
+        if (![delegate.dataAccessManager.favoriteBadgeObserver.arrayOfFavoritesTemp containsObject:_receipt.title])
+        {
+            [delegate.dataAccessManager.favoriteBadgeObserver.arrayOfFavoritesTemp addObject:_receipt.title];
+            //+ badge
+            [self incFavoriteTabBarItemBadge];            
+        }
+        else
+        {
+            [delegate.dataAccessManager.favoriteBadgeObserver.arrayOfFavoritesTemp removeObject:_receipt.title];
+            //- badge
+            [self decFavoriteTabBarItemBadge];
+        }
+    }
+    else
+    {
+        [delegate.dataAccessManager.favoriteBadgeObserver.arrayOfFavoritesDone removeObject:_receipt.title];
+    }
+    
     [self reconfigureControllerView];
 }
 
+- (void)incFavoriteTabBarItemBadge
+{
+    if (((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue == nil)
+    {
+        ((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue = @"1";
+    }
+    else
+    {
+        ((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue = [NSString stringWithFormat:@"%d", [((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue intValue] + 1];
+    }
+}
+
+- (void)decFavoriteTabBarItemBadge
+{
+    int value = [((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue intValue] - 1;
+    if (value == 0)
+    {
+        ((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue = nil;
+    }
+    else
+    {
+        ((UITabBarItem *)[self.tabBarController.tabBar.items objectAtIndex:1]).badgeValue = [NSString stringWithFormat:@"%d", value];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,10 +111,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
-
-
-
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

@@ -214,8 +214,8 @@
 			children = (
 				6BEF2BB915E029F1005CE036 /* IGRCFavoriteReceiptsTableViewController.h */,
 				6BEF2BB915E029F1005CE034 /* IGRCFavoriteReceiptsTableViewController.m */,
-				6BEF2BB915E029F1005CE02F /* IGRCReceiptDetailsViewController.m */,
 				6BEF2BB915E029F1005CE02E /* IGRCReceiptDetailsViewController.h */,
+				6BEF2BB915E029F1005CE02F /* IGRCReceiptDetailsViewController.m */,
 				6BEF2BB915E029F1005CE029 /* IGRCReceiptCell.m */,
 				6BEF2BB915E029F1005CE028 /* IGRCReceiptCell.h */,
 				6BAA20E015DAF0800013CF19 /* IGRCCategoryTableViewController.h */,
@@ -278,8 +278,8 @@
 		6BAA20E615DB73370013CF28 /* dataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				655659C8406D71254FD66D09 /* IGRCFavoritesBadgeObserver.m */,
 				6556593FE868A3C17FF6E6F9 /* IGRCFavoritesBadgeObserver.h */,
+				655659C8406D71254FD66D09 /* IGRCFavoritesBadgeObserver.m */,
 				6BAA20E615DB73370013CF2B /* IGRCDataAccessManager.h */,
 				6BAA20E615DB73370013CF29 /* IGRCDataAccessManager.m */,
 				6BAA20E615DB73370013CF27 /* model */,

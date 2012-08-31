@@ -11,5 +11,5 @@
 @class NSFetchedResultsController;
 
 @interface IGRCCategoryTableViewController : UITableViewController
-@property(nonatomic, readonly) NSFetchedResultsController *fetchResultsController;
+@property(nonatomic, retain, readonly) NSFetchedResultsController *fetchResultsController;
 @end

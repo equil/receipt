@@ -79,9 +79,9 @@ static NSString *const METADATA_FILE_NAME = @"db.sqlite";
 //}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self prepareDatabase];
     _segueStrategy = [[IGRCSeguePrepareStrategy alloc] init];
     _dataAccessManager = [[IGRCDataAccessManager alloc] init];
-    [self prepareDatabase];
 
 //    [self fillImagesDbg];
 

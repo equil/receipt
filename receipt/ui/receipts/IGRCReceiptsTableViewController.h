@@ -16,7 +16,7 @@
 
 @property(nonatomic, retain) Category *fromCategory;
 
-@property(nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+@property(nonatomic, retain, readonly) NSFetchedResultsController *fetchedResultsController;
 
 - (NSPredicate *)predicateForFetchedController;
 
